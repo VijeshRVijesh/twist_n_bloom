@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #FAF6F0;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --primary-wine: #7A2036;
+    --primary-rose: #9B334C;
+    --soft-rose: #D89A9E;
+    --light-rose: #F6E6E8;
+    --warm-cream: #FAF6F0;
+    --gold-accent: #D4AF37;
+    --text-dark: #2D2424;
+    --text-muted: #6C5D60;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Utilities & Styles */
+.font-serif-luxury {
+  font-family: var(--font-serif), Georgia, serif;
+}
+
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+.bg-gradient-wine {
+  background: linear-gradient(135deg, #7A2036 0%, #9B334C 50%, #5E1626 100%);
+}
+
+.bg-gradient-rose-gold {
+  background: linear-gradient(135deg, #FAF6F0 0%, #F8E8EB 50%, #F5DCDD 100%);
+}
+
+.text-gradient-wine {
+  background: linear-gradient(135deg, #7A2036 0%, #9B334C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(216, 154, 158, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(122, 32, 54, 0.05);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px 0 rgba(122, 32, 54, 0.12);
+  border-color: rgba(216, 154, 158, 0.5);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF6F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D89A9E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9B334C;
+}
+
+/* Fairy light glow animation */
+@keyframes fairyGlow {
+  0%, 100% { opacity: 0.4; filter: drop-shadow(0 0 4px #FFE599); }
+  50% { opacity: 1; filter: drop-shadow(0 0 12px #FFD700); }
+}
+
+.fairy-glow {
+  animation: fairyGlow 2.5s infinite ease-in-out;
+}
